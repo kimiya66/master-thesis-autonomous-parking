@@ -10,20 +10,12 @@ import os
 import sys
 import glob
 import matlab
-import matlab.engine
-import parkingTest
+import autoParking
 from pymatbridge import Matlab
 
-def decision(data):
-	image=data.save_to_disk('/home/user1/Downloads/Carla9.5/PythonAPI/my projects/camera_result/%06d.jpg' % data.frame_number);
-	print('this is the path to send to matlab: ',image); 
-	mlab = Matlab()
-	mlab.start()
-	overlap = mlab.run_func('parking.m', {'img': image})
+def decision(data,mlab):
+	image = data.save_to_disk('./camera_result/%06d.jpg' % data.frame_number);
+	print('sending camera result to matlab: ',image);
+	overlap = mlab.run_func('parking.m', {'img': image});
+	return overlap;
 
-	return overlap
-
-
-
-
-     

@@ -4,7 +4,7 @@ function ratio=parking(path)
          I = imread(path.img);
          detector = load('~/matlabR2018b/bin/newDetectors-8thJun/acfDetector.mat');
          [bboxes, scores]=detector.acfDetector.detect(I);
-         %detectedImg = insertObjectAnnotation(I,'rectangle',bboxes,scores,'color','r')   
+         %detectedImg = insertObjectAnnotation(I,'rectangle',bboxes,scores,'color','r');   
          %check if anything is detected!
           if isempty(scores)
              sprintf('nothing detected!')
@@ -15,7 +15,7 @@ function ratio=parking(path)
                       if selectedScores(i) > 20 && selectedScores(i+1) > 20 && selectedBboxes(i,4) > 40 
                           B1 = selectedBboxes(i,:);
                           B2 = selectedBboxes(i+1,:);
-                          distance=abs(B1-B2)
+                          distance=abs(B1-B2);
                           if distance(1,1) <= 130 
                              ratio=bboxOverlapRatio(selectedBboxes(i,:), selectedBboxes(i+1, : ))
                           else
