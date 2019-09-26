@@ -2,7 +2,8 @@ function ratio=parking(path)
          ratio = 100;
         
          I = imread(path.img);
-         detector = load('~/matlabR2018b/bin/newDetectors-8thJun/acfDetector.mat');
+         %detector = load('~/matlabR2018b/bin/newDetectors-8thJun/acfDetector.mat');
+         detector = load('./acfDetector.mat');
          [bboxes, scores]=detector.acfDetector.detect(I);
          %detectedImg = insertObjectAnnotation(I,'rectangle',bboxes,scores,'color','r');   
          %check if anything is detected!
