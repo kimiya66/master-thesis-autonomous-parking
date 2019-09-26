@@ -16,14 +16,16 @@ To run Carla-server, if you use built/compiled version(offered by carla.org) the
 ./CarlaUE4.sh Town02 -carla-server -windowed -X=50px -Y=40p -benchmark -fps=20
 
 
-And when Carla is made from source code manually(not a compiled version), it would not contain CarlaUE4.sh file and UnrealEditor should be opened as server. And as it open the editor, it would be slower than the compiled version. To open UE4Editor as carla-server, following command should be executed. CarlaUE4.uproject is the project made by Carla and this command run this project on UE4Editor.
+And when Carla is made from source code manually(not a compiled version), UnrealEditor could be opened as server. And as it open the editor, it would be slower than the compiled version. To open UE4Editor as carla-server, following command should be executed. CarlaUE4.uproject is the project made by Carla and this command run this project on UE4Editor.
 
 ~/UnrealEngine_4.21/Engine/Binaries/Linux/UE4Editor ~/carla/Unreal/CarlaUE4/CarlaUE4.uproject Town02 -benchmark -fps 20
  1877 
+ 
+It is also possible to access CarlaUE4.sh here and run the implementation without opening UnrealEngine but CarlaUE4.sh file is located on Dist (../Carla/Dist/0.9.5/LinuxNoEditor)
 
 
 
-After running Carla-Server in another terminal read the main python script. auto-parking.py or if you just want to see the maneuver, parkingManeuver.py
+After running Carla-Server in another terminal the main python script(autoParking.py) should be called or if you just want to see the maneuver parkingManeuver.py can be executed
 
 #please consider that all scripts are based on python2.7... so the carla connection may not work with python3
 
